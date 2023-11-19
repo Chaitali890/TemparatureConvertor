@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Temperature Convertor</title>
+	<style>
+		
+.container
+{
+	text-align: center;
+	margin: 100px;
+	background-color: #1abc9d;
+	padding: 60px;
+}
+h1
+{
+	color: white;
+}
+.inp
+{
+	padding: 10px;
+	text-align: center;
+	font-size: 15px;
+	margin: 10px;
+	width: 250px;
+}
+
+	</style>
+</head>
+<body>
+
+
+	<div class="container">
+		<h1>Temperature Convertor</h1>
+		<label>Celcious</label>
+		<input type="number" value="0" id="cel" class="inp">
+		<label>Farenheits</label>
+		<input type="number" value="32" id="fah" class="inp">
+	</div>	
+
+<script>
+
+	let cel = document.getElementById("cel");
+	let fah = document.getElementById("fah");
+
+	cel.addEventListener('input',function()
+		{
+			let c = this.value;
+			let f = (c*9/5)+32;
+			if(!Number.isInteger(f))
+			{
+				f = f.toFixed(4);
+			}
+			fah.value = f;
+		});
+	fah.addEventListener('input',function()
+		{
+			let f = this.value;
+			let c = (f-32)*5/9;
+			if(!Number.isInteger(c))
+			{
+				c = c.toFixed(4);
+			}
+			cel.value = c;
+		});
+</script>
+
+</body>
+</html>..........................................
